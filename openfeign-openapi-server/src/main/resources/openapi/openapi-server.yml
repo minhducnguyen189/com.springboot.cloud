@@ -1,40 +1,84 @@
 openapi: 3.0.1
 info:
-  title: Swagger Petstore
-  description: 'This is a sample server Petstore server.  You can find out more about     Swagger
-    at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For
-    this sample, you can use the api key `special-key` to test the authorization     filters.'
-  termsOfService: http://swagger.io/terms/
-  contact:
-    email: apiteam@swagger.io
+  title: Swagger Openapi Server
+  description: 'This is the Openapi Specification For Feign Server'
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
-externalDocs:
-  description: Find out more about Swagger
-  url: http://swagger.io
-servers:
-  - url: https://petstore.swagger.io/v2
-  - url: http://petstore.swagger.io/v2
 tags:
-  - name: server
-    description: Everything about your Pets
-    externalDocs:
-      description: Find out more
-      url: http://swagger.io
+- name: server
+  description: all server apis
 paths:
-  /datetime:
-    get:
+  /v1/server/customers:
+    post:
       tags:
-        - server
-      summary: Finds Pets by status
-      description: Multiple status values can be provided with comma separated strings
-      operationId: getServerDateTime
+      - server
+      summary: Create a customer
+      description: create a customer
+      operationId: createCustomer
+      requestBody:
+        description: request body
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+        required: true
       responses:
-        200:
-          description: successful operatio
+        201:
+          description: successful operation
           content:
             application/json:
               schema:
                 type: string
+                format: uuid
+    get:
+      tags:
+      - server
+      summary: get customers
+      description: get customers
+      operationId: getCustomers
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+components:
+  schemas:
+    CustomerRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        address:
+          type: string
+        phone:
+          type: string
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        address:
+          type: string
+        phone:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        updatedDate:
+          type: string
+          format: date-time
