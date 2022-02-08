@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="server" />
+        <module name="openfeign-openapi-server" />
         <module name="adapter" />
         <module name="zuul" />
         <module name="bff" />
+        <module name="openfeign-openapi-client" />
       </profile>
     </annotationProcessing>
   </component>

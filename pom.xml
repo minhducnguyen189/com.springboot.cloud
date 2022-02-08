@@ -20,6 +20,8 @@
         <module>zuul-edge-service</module>
         <module>bff-application-service</module>
         <module>blog-application-adapter</module>
+        <module>openfeign-openapi-server</module>
+        <module>openfeign-openapi-client</module>
     </modules>
 
 </project>

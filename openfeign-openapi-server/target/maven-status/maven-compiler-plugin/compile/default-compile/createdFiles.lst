@@ -1,0 +1,4 @@
+com/springboot/cloud/openfeign/openapi/server/app/controller/ServerController.class
+com/springboot/cloud/openfeign/openapi/server/app/OpenFeignOpenApiServer.class
+com/springboot/cloud/openfeign/openapi/server/app/api/ApiUtil.class
+com/springboot/cloud/openfeign/openapi/server/app/api/DatetimeApi.class
