@@ -1,0 +1,28 @@
+
+server:
+  port: 8082
+
+openfeign:
+  server:
+    name: OPENFEIGN-OPENAPI-SERVER
+
+spring:
+  application:
+    name: openfeign-openapi-client
+  cloud:
+    discovery:
+      enabled: true
+    loadbalancer:
+      retry:
+        enable: true
+        maxRetriesOnSameServiceInstance: 5
+        backoff:
+          minBackoff: 10000
+          maxBackoff: 30000
+          jitter: 5000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true

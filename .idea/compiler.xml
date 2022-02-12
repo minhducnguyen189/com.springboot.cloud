@@ -6,21 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="server" />
+        <module name="zuul-edge-service" />
         <module name="openfeign-openapi-server" />
-        <module name="adapter" />
-        <module name="zuul" />
-        <module name="bff" />
+        <module name="eureka-server" />
         <module name="openfeign-openapi-client" />
+        <module name="blog-application-adapter" />
+        <module name="bff-application-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="adapter" options="-parameters" />
-      <module name="bff" options="-parameters" />
-      <module name="server" options="-parameters" />
-      <module name="zuul" options="-parameters" />
+      <module name="bff-application-service" options="-parameters" />
+      <module name="blog-application-adapter" options="-parameters" />
+      <module name="eureka-server" options="" />
+      <module name="zuul-edge-service" options="-parameters" />
     </option>
   </component>
 </project>
