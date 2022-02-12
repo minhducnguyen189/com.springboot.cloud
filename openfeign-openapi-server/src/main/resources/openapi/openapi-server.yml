@@ -52,22 +52,32 @@ components:
     CustomerRequest:
       type: object
       properties:
-        name:
+        fullName:
           type: string
+          example: Nguyen Minh Duc
         email:
           type: string
           format: email
+          example: ducnguyen@gmail.com
         address:
           type: string
+          example: 3/115 Binh Duong
         phone:
           type: string
+          example: 0999123445
+        gender:
+          type: string
+          enum: [M, F]
+        dob:
+          type: string
+          format: date
     Customer:
       type: object
       properties:
         id:
           type: string
           format: uuid
-        name:
+        fullName:
           type: string
         email:
           type: string
@@ -76,9 +86,15 @@ components:
           type: string
         phone:
           type: string
-        createdDate:
+        gender:
+          type: string
+          enum: [ M, F ]
+        dob:
+          type: string
+          format: date
+        createdAt:
           type: string
           format: date-time
-        updatedDate:
+        updatedAt:
           type: string
           format: date-time
