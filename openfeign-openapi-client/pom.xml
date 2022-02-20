@@ -29,6 +29,8 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <!--spring boot starter-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -42,7 +44,7 @@
             <version>5.4.0</version>
         </dependency>
 
-        <!--Openapi UI with validation-->
+        <!--Openapi with validation-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -81,6 +83,7 @@
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
 
+        <!-- eureka client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
