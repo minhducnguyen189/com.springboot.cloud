@@ -8,17 +8,6 @@ spring:
     encoding:
       charset: UTF-8
       enabled: true
-  application:
-    name: openfeign-openapi-server
-  cloud:
-    discovery:
-      enabled: true
-    loadbalancer:
-      retry:
-        enable: true
-        maxRetriesOnSameServiceInstance: 5
-        backoff:
-          maxBackoff: 5000
   datasource:
     url: jdbc:h2:file:./testdb
     username: sa
@@ -30,7 +19,6 @@ spring:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
-#    naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
   h2:
     console:
       enabled: true
@@ -39,6 +27,20 @@ spring:
         trace: false
         web-allow-others: false
 
+  #spring cloud configuration
+  application:
+    name: openfeign-openapi-server
+  cloud:
+    discovery:
+      enabled: true
+    loadbalancer:
+      retry:
+        enable: true
+        maxRetriesOnSameServiceInstance: 5
+        backoff:
+          maxBackoff: 5000
+
+#connect eureka server configuration
 eureka:
   client:
     serviceUrl:
