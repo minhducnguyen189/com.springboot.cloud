@@ -22,6 +22,7 @@
         <module>blog-application-adapter</module>
         <module>openfeign-openapi-server</module>
         <module>openfeign-openapi-client</module>
+        <module>openfeign-library</module>
     </modules>
 
 </project>
