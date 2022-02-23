@@ -7,9 +7,7 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>com.eureka</groupId>
-	<artifactId>server</artifactId>
+	<artifactId>eureka-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>server</name>
 	<description>Demo project for Spring Boot</description>

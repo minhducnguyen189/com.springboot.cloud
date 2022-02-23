@@ -23,6 +23,7 @@
         <module>openfeign-openapi-server</module>
         <module>openfeign-openapi-client</module>
         <module>openfeign-library</module>
+        <module>bff-openfeign-library</module>
     </modules>
 
 </project>
