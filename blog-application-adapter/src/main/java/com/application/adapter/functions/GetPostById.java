@@ -23,7 +23,7 @@ public class GetPostById implements Function<String, PostResponse> {
         try {
             Optional<PostEntity> entity = repository.findById(id);
             PostResponse response = new PostResponse();
-            MapperUtil.convertObject(entity, response);
+            entity.ifPresent(postEntity -> MapperUtil.convertObject(postEntity, response));
             return response;
         } catch (RuntimeException ex) {
             throw new ApiException("Not found, the id is not existed!", ex);
