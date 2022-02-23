@@ -2,6 +2,7 @@ HELP.md
 
 **/target
 **.mv.db
+**.trace.db
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

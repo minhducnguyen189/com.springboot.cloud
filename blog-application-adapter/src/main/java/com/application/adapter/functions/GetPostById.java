@@ -8,6 +8,7 @@ import com.application.adapter.utilities.MapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
 import java.util.function.Function;
 
 @Component
@@ -20,7 +21,7 @@ public class GetPostById implements Function<String, PostResponse> {
     @Override
     public PostResponse apply(String id) {
         try {
-            PostEntity entity = repository.getOne(id);
+            Optional<PostEntity> entity = repository.findById(id);
             PostResponse response = new PostResponse();
             MapperUtil.convertObject(entity, response);
             return response;

@@ -1,0 +1,8 @@
+
+server:
+  port: 9092
+
+adapter:
+  service:
+    url:
+      vn: http://localhost:8080
