@@ -12,9 +12,9 @@ public class PostService {
     @Autowired
     private FeignClientAdapterBuilder<AdapterServiceApi> feignClientAdapterBuilder;
 
-    public String getPostById(String id) {
+    public String getPostById(String countryCode, String id) {
         AdapterServiceApi adapterServiceApi = this.feignClientAdapterBuilder
-                        .feignClientAdapterConfig("adapter.service.url", "vn", AdapterServiceApi.class);
+                        .feignClientAdapterConfig("adapter.service.url", countryCode, AdapterServiceApi.class);
         return new Gson().toJson(adapterServiceApi.getPostById(id));
     }
 

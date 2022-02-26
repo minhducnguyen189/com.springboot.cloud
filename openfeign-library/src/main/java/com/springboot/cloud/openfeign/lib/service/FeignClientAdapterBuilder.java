@@ -8,6 +8,7 @@ import feign.gson.GsonEncoder;
 import feign.okhttp.OkHttpClient;
 import feign.slf4j.Slf4jLogger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.support.SpringMvcContract;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,7 @@ public class FeignClientAdapterBuilder<T> {
                 .errorDecoder(new ErrorDecoder.Default())   //confiure errorDecoder
                 .logger(new Slf4jLogger(tClass))     //configure logger
                 .logLevel(Logger.Level.FULL)        //configure logLevel
+                .contract(new SpringMvcContract()) //configure contract
                 //configure target url
                 .target(tClass, env.getProperty(prefix.concat(".").concat(code)));
     }

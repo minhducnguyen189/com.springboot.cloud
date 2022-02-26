@@ -6,3 +6,4 @@ adapter:
   service:
     url:
       vn: http://localhost:8080
+      sg: http://localhost:8080

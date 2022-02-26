@@ -15,9 +15,9 @@ public class ApiController {
     @Autowired
     private PostService postService;
 
-    @RequestMapping(method = RequestMethod.GET, path = "application/posts/{id}", produces = {"application/json"})
-    public ResponseEntity<String> getPostById(@PathVariable("id") String id) {
-        return new ResponseEntity<>(postService.getPostById(id), HttpStatus.OK);
+    @RequestMapping(method = RequestMethod.GET, path = "/v1/country/{countryId}/application/posts/{id}", produces = {"application/json"})
+    public ResponseEntity<String> getPostById(@PathVariable("countryId") String countryId, @PathVariable("id") String id) {
+        return new ResponseEntity<>(postService.getPostById(countryId, id), HttpStatus.OK);
     }
 
 
