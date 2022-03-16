@@ -9,6 +9,12 @@
     
 ```
 
+# EXAMPLE WITH SPRING CLOUD FEIGNCLIENT
+
+- In this example you should start following modules.
+  - Eureka-Server
+  - Bff-Application-Service
+  - Blog-Application-Adapter (profile: application-local.yml)
 
 
 # EXAMPLE WITH ZUUL GATEWAY
