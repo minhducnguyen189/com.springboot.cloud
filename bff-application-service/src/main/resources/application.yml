@@ -1,0 +1,18 @@
+#service run at port 9090
+server:
+  port: 9090
+
+spring:
+  application:
+    #service name which will be showed on eureka server dashboard
+    name: application-bff-service
+  #Enable Spring Cloud Discovery
+  cloud:
+    discovery:
+      enabled: true
+
+#register this service to eureka server by url
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
