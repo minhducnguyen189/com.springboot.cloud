@@ -9,7 +9,13 @@
     
 ```
 
-# EXAMPLE WITH SPRING CLOUD FEIGNCLIENT
+# EXAMPLE WITH SPRING CLOUD FEIGNCLIENT BASIC
+
+- In this example you should start following modules.
+  - Bff-Application-Service
+  - Blog-Application-Adapter (profile: application-local.yml)
+
+# EXAMPLE WITH SPRING CLOUD FEIGNCLIENT AND EUREKA
 
 - In this example you should start following modules.
   - Eureka-Server
@@ -27,7 +33,7 @@
 
 - You can [view more in this post](https://minhducnguyen189.github.io/java/2021/07/05/java-springboot-eureka-zuul.html)
 
-# EXAMPLE WITH OPENFEIGN
+# EXAMPLE WITH OPENFEIGN LIBRARY
 
 - In this example you should start following modules.
     - Bff-Openfeign-Library
