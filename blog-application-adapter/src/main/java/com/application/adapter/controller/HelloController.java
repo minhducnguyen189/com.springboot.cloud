@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @RequestMapping(method = RequestMethod.GET, path = "/v1/sayHello")
+    @RequestMapping(method = RequestMethod.GET, path = "/v1/hello")
     public ResponseEntity<String> getHello() {
         return new ResponseEntity<>("Hello from blog application adapter", HttpStatus.OK);
     }
