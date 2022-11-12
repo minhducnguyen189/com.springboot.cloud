@@ -24,6 +24,7 @@
         <module>openfeign-openapi-client</module>
         <module>openfeign-library</module>
         <module>bff-openfeign-library</module>
+        <module>openfeign-web-services</module>
     </modules>
 
 </project>
