@@ -1,0 +1,6 @@
+
+country:
+  client:
+    soap:
+      package: com.example.workflow.models.gen
+      url: http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL
