@@ -20,7 +20,7 @@
             **/repositories/*,
             **/constants/*
         </sonar.exclusions>
-        <jacoco.version>0.8.3</jacoco.version>
+        <jacoco.version>0.8.8</jacoco.version>
         <eureka.client.version>3.1.0</eureka.client.version>
     </properties>
 
@@ -56,7 +56,7 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-runner</artifactId>
-            <version>1.2.0</version>
+            <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
 

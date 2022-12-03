@@ -16,13 +16,12 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 
 @ExtendWith(MockitoExtension.class)
-public class GetPostsTest {
+class GetPostsTest {
 
     @InjectMocks
     private GetPosts getPosts;
@@ -44,7 +43,7 @@ public class GetPostsTest {
 
 
     @Test
-    public void testApply() {
+    void testApply() {
         Pageable pageable = PageRequest.of(1, 1, Sort.by("AAA").descending());
         List<PostEntity> entityList = Collections.singletonList(new PostEntity());
         Mockito.when(context.getBean(PageEnv.class)).thenReturn(pageEnv);
@@ -55,7 +54,7 @@ public class GetPostsTest {
     }
 
     @Test
-    public void testApplyWithNullSortKey() {
+    void testApplyWithNullSortKey() {
         List<PostEntity> entityList = Collections.singletonList(new PostEntity());
         Mockito.when(context.getBean(PageEnv.class)).thenReturn(pageEnv);
         Mockito.when(pageEnv.getSize()).thenReturn(1);

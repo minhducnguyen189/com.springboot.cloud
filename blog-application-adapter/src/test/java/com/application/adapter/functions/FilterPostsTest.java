@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class FilterPostsTest {
+class FilterPostsTest {
 
 
     @InjectMocks
@@ -49,7 +49,7 @@ public class FilterPostsTest {
 
 
     @Test
-    public void testApply() {
+    void testApply() {
         Filter filter = new Filter();
         filter.setPage(1);
         filter.setPageSize(1);
@@ -63,7 +63,7 @@ public class FilterPostsTest {
     }
 
     @Test
-    public void testApplyWithNullSortField() {
+    void testApplyWithNullSortField() {
         Filter filter = new Filter();
         filter.setPage(1);
         filter.setPageSize(1);
@@ -77,7 +77,7 @@ public class FilterPostsTest {
     }
 
     @Test
-    public void testApplyWithFullFilter() {
+    void testApplyWithFullFilter() {
         Filter filter = new Filter();
         filter.setPage(1);
         filter.setPageSize(1);

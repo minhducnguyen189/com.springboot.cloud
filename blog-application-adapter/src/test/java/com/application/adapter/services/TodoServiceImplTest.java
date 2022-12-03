@@ -12,7 +12,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Collections;
 import java.util.List;
@@ -22,7 +21,7 @@ import java.util.function.Function;
 
 
 @ExtendWith(MockitoExtension.class)
-public class TodoServiceImplTest {
+class TodoServiceImplTest {
 
 
     @InjectMocks
@@ -52,21 +51,21 @@ public class TodoServiceImplTest {
     }
 
     @Test
-    public void testCreatePost() {
+    void testCreatePost() {
         Post post = new Post();
         Mockito.when(createPost.apply(post)).thenReturn("AAA");
         Assertions.assertEquals("AAA", todoServiceImpl.createPost(post));
     }
 
     @Test
-    public void testGetPostById (){
+    void testGetPostById (){
         PostResponse postResponse = new PostResponse();
         Mockito.when(getPostById.apply(Mockito.any())).thenReturn(postResponse);
         Assertions.assertNotNull(todoServiceImpl.getPostById("AAA"));
     }
 
     @Test
-    public void testGetPosts() {
+    void testGetPosts() {
         PostResponse postResponse = new PostResponse();
         Mockito.when(getPosts.apply(Mockito.anyInt(), Mockito.anyString()))
                 .thenReturn(Collections.singletonList(postResponse));
@@ -74,7 +73,7 @@ public class TodoServiceImplTest {
     }
 
     @Test
-    public void testUpdatePost() {
+    void testUpdatePost() {
         Mockito.doNothing().when(testLogger).accept(Mockito.any(), Mockito.any());
         Mockito.when(updatePostById.andThen(testLogger)).thenReturn(testLogger);
         todoServiceImpl.updatePost("ID", new Post());
@@ -82,7 +81,7 @@ public class TodoServiceImplTest {
     }
 
     @Test
-    public void testFilterPosts() {
+    void testFilterPosts() {
         PostResponse postResponse = new PostResponse();
         Filter filter = new Filter();
         Mockito.when(filterPosts.apply(filter))

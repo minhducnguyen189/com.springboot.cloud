@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class ApiControllerTest {
+class ApiControllerTest {
 
     @InjectMocks
     private ApiController apiController;
@@ -46,30 +46,30 @@ public class ApiControllerTest {
 
 
     @Test
-    public void test_getPostById() {
+    void test_getPostById() {
         Mockito.when(todoService.getPostById(Mockito.anyString())).thenReturn(postResponse);
         Assertions.assertEquals(HttpStatus.OK, apiController.getPostById(MOCK_ID).getStatusCode());
     }
 
     @Test
-    public void test_createPost() {
+    void test_createPost() {
         Assertions.assertEquals(HttpStatus.CREATED, apiController.createPost(post).getStatusCode());
     }
 
     @Test
-    public void test_updatePost() {
+    void test_updatePost() {
         Mockito.doNothing().when(todoService).updatePost(Mockito.any(), Mockito.any());
         Assertions.assertEquals(HttpStatus.OK, apiController.updatePost(MOCK_ID, post).getStatusCode());
     }
 
     @Test
-    public void test_getPosts() {
+    void test_getPosts() {
         Mockito.when(todoService.getPosts(Mockito.anyInt(), Mockito.any())).thenReturn(postResponses);
         Assertions.assertEquals(HttpStatus.OK, apiController.getPosts(MOCK_PAGE, MOCK_KEY).getStatusCode());
     }
 
     @Test
-    public void test_filterPosts() {
+    void test_filterPosts() {
         Mockito.when(todoService.filterPosts(Mockito.any())).thenReturn(postResponses);
         Assertions.assertEquals(HttpStatus.OK, apiController.filterPosts(Mockito.any()).getStatusCode());
     }

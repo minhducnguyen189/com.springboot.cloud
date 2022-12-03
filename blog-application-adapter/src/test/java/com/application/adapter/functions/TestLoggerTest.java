@@ -13,7 +13,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class TestLoggerTest {
+class TestLoggerTest {
 
     @InjectMocks
     private TestLogger testLogger;
@@ -25,7 +25,7 @@ public class TestLoggerTest {
     private ObjectWriter objectWriter;
 
     @Test
-    public void testAccept() throws JsonProcessingException {
+    void testAccept() throws JsonProcessingException {
         Mockito.when(objectMapper.writerWithDefaultPrettyPrinter()).thenReturn(objectWriter);
         Mockito.when(objectWriter.writeValueAsString(Mockito.any())).thenReturn("AAA");
         testLogger.accept("AAA", new Post());
