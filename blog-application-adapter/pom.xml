@@ -14,11 +14,12 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.exclusions>
-            **/models/**,
-            **/repositories/*,
-            **/constants/*
+            **/models/*.class,
+            **/repositories/*.class,
+            **/constants/*.class
         </sonar.exclusions>
         <jacoco.version>0.8.8</jacoco.version>
         <eureka.client.version>3.1.0</eureka.client.version>
@@ -51,12 +52,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>2.6.3</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -107,6 +102,19 @@
                 <version>2.6.3</version>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>5.4.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
             <!-- Jacoco report: code coverage report -->
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -114,9 +122,9 @@
                 <version>${jacoco.version}</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/models/**</exclude>
-                        <exclude>**/repositories/*</exclude>
-                        <exclude>**/constants/*</exclude>
+                        <exclude>**/models/*.class</exclude>
+                        <exclude>**/repositories/*.class</exclude>
+                        <exclude>**/constants/*.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>

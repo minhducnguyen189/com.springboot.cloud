@@ -3,8 +3,9 @@ package com.application.adapter.controller;
 import com.application.adapter.models.request.Post;
 import com.application.adapter.models.response.PostResponse;
 import com.application.adapter.services.TodoService;
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -35,8 +36,8 @@ class ApiControllerTest {
     private Post post;
     private List<PostResponse> postResponses;
 
-    @Before
-    public void initMock() {
+    @BeforeEach
+    void initMock() {
         postResponses = new ArrayList<>();
         postResponse = new PostResponse();
         postResponses.add(postResponse);
