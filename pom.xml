@@ -95,8 +95,7 @@
             <properties>
                 <activeatedProperties>dev</activeatedProperties>
                 <sonar.host.url>http://localhost:9000</sonar.host.url>
-                <sonar.login>admin</sonar.login>
-                <sonar.password>password</sonar.password>
+                <sonar.login>9da54180b98f2667d0858dd18ccdb79014bfd79f</sonar.login>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
