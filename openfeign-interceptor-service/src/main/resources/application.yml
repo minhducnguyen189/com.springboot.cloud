@@ -1,0 +1,8 @@
+
+spring:
+  security:
+    basic:
+      url: http://localhost:8083
+
+
+
