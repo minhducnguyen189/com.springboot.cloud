@@ -5,4 +5,12 @@ spring:
       url: http://localhost:8083
 
 
+logging:
+  level:
+    com.springboot.cloud.openfeign.interceptor.service.api: DEBUG
 
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: full

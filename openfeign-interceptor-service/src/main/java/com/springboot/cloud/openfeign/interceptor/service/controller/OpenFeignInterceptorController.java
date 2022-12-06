@@ -1,6 +1,7 @@
 package com.springboot.cloud.openfeign.interceptor.service.controller;
 
 import com.springboot.cloud.openfeign.interceptor.service.api.SpringBasicAuthClient;
+import com.springboot.cloud.openfeign.interceptor.service.api.SpringCustomHeaderClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,9 @@ public class OpenFeignInterceptorController {
     @Autowired
     private SpringBasicAuthClient springBasicAuthClient;
 
+    @Autowired
+    private SpringCustomHeaderClient springCustomHeaderClient;
+
     @RequestMapping(method = RequestMethod.GET, path = "/v1/basic/auth/interceptor/welcome")
     public ResponseEntity<String> getWelcomeMessageWithBasicAuthInterceptor() {
         return ResponseEntity.ok(this.springBasicAuthClient.sayWelcome());
@@ -20,7 +24,7 @@ public class OpenFeignInterceptorController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/v1/custom/header/interceptor/welcome")
     public ResponseEntity<String> getWelcomeMessageWithCustomerHeaders() {
-        return ResponseEntity.ok(this.springBasicAuthClient.sayWelcome());
+        return ResponseEntity.ok(this.springCustomHeaderClient.sayWelcome());
     }
 
 }
