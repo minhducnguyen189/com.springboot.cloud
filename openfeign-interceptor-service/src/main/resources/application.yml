@@ -3,6 +3,11 @@ spring:
   security:
     basic:
       url: http://localhost:8083
+    jwt:
+      url: http://localhost:8084
+    user:
+      name: user
+      password: 12345
 
 
 logging:
