@@ -11,11 +11,13 @@ import org.springframework.util.MimeTypeUtils;
 import java.util.Collection;
 import java.util.UUID;
 
-@Configuration
 public class JwtAuthFeignConfig {
 
-    @Autowired
-    private SpringJwtLoginClient springJwtLoginClient;
+    private final SpringJwtLoginClient springJwtLoginClient;
+
+    public JwtAuthFeignConfig(SpringJwtLoginClient springJwtLoginClient) {
+        this.springJwtLoginClient = springJwtLoginClient;
+    }
 
     @Bean
     public RequestInterceptor basicAuthRequestInterceptor() {

@@ -1,14 +1,21 @@
 package com.springboot.cloud.openfeign.interceptor.service.config;
 
 import feign.auth.BasicAuthRequestInterceptor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 
 
 public class JwtAuthLoginFeignConfig {
 
+    @Value("${spring.security.jwt.username}")
+    private String username;
+
+    @Value("${spring.security.jwt.password}")
+    private String password;
+
     @Bean
     public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
-        return new BasicAuthRequestInterceptor("han.do@example.com", "12345");
+        return new BasicAuthRequestInterceptor(username, password);
     }
 
 }
