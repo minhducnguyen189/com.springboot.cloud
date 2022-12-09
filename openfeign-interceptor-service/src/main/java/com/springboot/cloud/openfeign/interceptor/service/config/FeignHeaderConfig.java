@@ -1,6 +1,5 @@
 package com.springboot.cloud.openfeign.interceptor.service.config;
 
-import feign.Logger;
 import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 

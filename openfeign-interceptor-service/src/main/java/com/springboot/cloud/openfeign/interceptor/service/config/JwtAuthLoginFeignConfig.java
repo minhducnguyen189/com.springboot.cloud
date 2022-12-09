@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Bean;
 
 public class JwtAuthLoginFeignConfig {
 
-    @Value("${spring.security.jwt.username}")
+    @Value("${spring.security.jwt.credentials.username}")
     private String username;
 
-    @Value("${spring.security.jwt.password}")
+    @Value("${spring.security.jwt.credentials.password}")
     private String password;
 
     @Bean

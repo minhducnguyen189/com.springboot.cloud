@@ -2,14 +2,9 @@ package com.springboot.cloud.openfeign.interceptor.service.config;
 
 import com.springboot.cloud.openfeign.interceptor.service.api.SpringJwtLoginClient;
 import feign.RequestInterceptor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.http.MediaType;
-import org.springframework.util.MimeTypeUtils;
 
 import java.util.Collection;
-import java.util.UUID;
 
 public class JwtAuthFeignConfig {
 

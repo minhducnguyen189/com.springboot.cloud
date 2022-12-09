@@ -5,8 +5,9 @@ spring:
       url: http://localhost:8083
     jwt:
       url: http://localhost:8084
-      username: "han.do@example.com"
-      password: "12345"
+      credentials:
+        username: "han.do@example.com"
+        password: "12345"
     user:
       name: "user"
       password: "12345"
