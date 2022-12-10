@@ -1,6 +1,5 @@
 package com.springboot.cloud.openfeign.interceptor.service.api;
 
-import com.springboot.cloud.openfeign.interceptor.service.config.JwtAuthFeignConfig;
 import com.springboot.cloud.openfeign.interceptor.service.config.JwtAuthLoginFeignConfig;
 import feign.Response;
 import org.springframework.cloud.openfeign.FeignClient;
