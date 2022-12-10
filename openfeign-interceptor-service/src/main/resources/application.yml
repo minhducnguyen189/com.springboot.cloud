@@ -1,16 +1,20 @@
 
 spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+      - org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration
   security:
     basic:
       url: http://localhost:8083
+      username: "user"
+      password: "12345"
+      token: "Basic dXNlcjoxMjM0NQ=="
     jwt:
       url: http://localhost:8084
       credentials:
         username: "han.do@example.com"
         password: "12345"
-    user:
-      name: "user"
-      password: "12345"
 
 
 logging:

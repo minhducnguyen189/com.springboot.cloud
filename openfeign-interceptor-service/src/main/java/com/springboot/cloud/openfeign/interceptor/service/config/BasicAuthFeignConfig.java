@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Bean;
 //We should not put the annotation @Configuration right here because it will apply the BasicAuthRequestInterceptor for all FeignClients
 public class BasicAuthFeignConfig {
 
-    @Value("${spring.security.user.name}")
+    @Value("${spring.security.basic.username}")
     private String username;
 
-    @Value("${spring.security.user.password}")
+    @Value("${spring.security.basic.password}")
     private String password;
 
     @Bean
