@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.UUID;
 
+//We should not put the annotation @Configuration right here because it will apply the BasicAuthRequestInterceptor for all FeignClients
 public class FeignHeaderConfig {
 
     @Value("${spring.security.basic.token}")
