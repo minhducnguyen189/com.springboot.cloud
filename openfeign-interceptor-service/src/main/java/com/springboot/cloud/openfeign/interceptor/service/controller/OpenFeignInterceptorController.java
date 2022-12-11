@@ -3,7 +3,6 @@ package com.springboot.cloud.openfeign.interceptor.service.controller;
 import com.springboot.cloud.openfeign.interceptor.service.api.SpringBasicAuthClient;
 import com.springboot.cloud.openfeign.interceptor.service.api.SpringCustomHeaderClient;
 import com.springboot.cloud.openfeign.interceptor.service.api.SpringJwtAuthClient;
-import com.springboot.cloud.openfeign.interceptor.service.api.SpringJwtLoginClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
