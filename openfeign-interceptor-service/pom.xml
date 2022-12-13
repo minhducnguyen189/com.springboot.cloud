@@ -38,6 +38,14 @@
             <version>2.6.3</version>
         </dependency>
 
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!--Spring cloud openfeign-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
