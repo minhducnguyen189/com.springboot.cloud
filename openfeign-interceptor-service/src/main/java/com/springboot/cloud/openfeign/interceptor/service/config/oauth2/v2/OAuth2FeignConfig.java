@@ -1,31 +1,30 @@
-package com.springboot.cloud.openfeign.interceptor.service.config;
-
+package com.springboot.cloud.openfeign.interceptor.service.config.oauth2.v2;
 
 import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpHeaders;
 import org.springframework.security.oauth2.client.*;
-import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 
-public class OAuthFeignConfig {
+public class OAuth2FeignConfig {
 
     public static final String CLIENT_REGISTRATION_ID = "keycloak";
 
-    private final OAuth2AuthorizedClientService oAuth2AuthorizedClientService;
     private final ClientRegistrationRepository clientRegistrationRepository;
+    private final OAuth2AuthorizedClientService authorizedClientService;
 
-    public OAuthFeignConfig(OAuth2AuthorizedClientService oAuth2AuthorizedClientService, ClientRegistrationRepository clientRegistrationRepository) {
-        this.oAuth2AuthorizedClientService = oAuth2AuthorizedClientService;
+    public OAuth2FeignConfig(ClientRegistrationRepository clientRegistrationRepository,
+                             OAuth2AuthorizedClientService authorizedClientService) {
         this.clientRegistrationRepository = clientRegistrationRepository;
+        this.authorizedClientService = authorizedClientService;
     }
 
     @Bean
     public RequestInterceptor requestInterceptor() {
-        ClientRegistration clientRegistration = clientRegistrationRepository.findByRegistrationId(CLIENT_REGISTRATION_ID);
         OAuthClientCredentialsFeignManager clientCredentialsFeignManager =
-                new OAuthClientCredentialsFeignManager(authorizedClientManager(), clientRegistration);
+                new OAuthClientCredentialsFeignManager(authorizedClientManager(), clientRegistrationRepository);
         return requestTemplate -> {
-            requestTemplate.header("Authorization", "Bearer " + clientCredentialsFeignManager.getAccessToken());
+            requestTemplate.header(HttpHeaders.AUTHORIZATION, clientCredentialsFeignManager.getAccessToken(CLIENT_REGISTRATION_ID));
         };
     }
 
@@ -35,10 +34,9 @@ public class OAuthFeignConfig {
                 .clientCredentials()
                 .build();
         AuthorizedClientServiceOAuth2AuthorizedClientManager authorizedClientManager =
-                new AuthorizedClientServiceOAuth2AuthorizedClientManager(clientRegistrationRepository, oAuth2AuthorizedClientService);
+                new AuthorizedClientServiceOAuth2AuthorizedClientManager(clientRegistrationRepository, authorizedClientService);
         authorizedClientManager.setAuthorizedClientProvider(authorizedClientProvider);
         return authorizedClientManager;
     }
-
 
 }
