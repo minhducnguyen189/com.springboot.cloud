@@ -26,11 +26,7 @@ spring:
             client-id: myclient
             client-secret: 80YlNd6qwz84hnisibF8QHVAtjUkVj0p
             authorization-grant-type: client_credentials
-            scope: # your scopes
-              - openid
-              - address
-              - email
-              - profile
+            scope: openid, address, email, profile # your scopes
         provider:
           keycloak: # <--- Here Registered my custom provider
             authorization-uri: http://localhost:8080/auth/realms/myrealm/protocol/openid-connect/auth
