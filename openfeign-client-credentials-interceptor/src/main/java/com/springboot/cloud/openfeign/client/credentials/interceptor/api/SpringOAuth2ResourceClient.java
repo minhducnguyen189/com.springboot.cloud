@@ -1,6 +1,6 @@
-package com.springboot.cloud.openfeign.interceptor.service.api;
+package com.springboot.cloud.openfeign.client.credentials.interceptor.api;
 
-import com.springboot.cloud.openfeign.interceptor.service.config.oauth2.v1.OAuth2FeignConfig;
+import com.springboot.cloud.openfeign.client.credentials.interceptor.config.oauth2.v1.OAuth2FeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

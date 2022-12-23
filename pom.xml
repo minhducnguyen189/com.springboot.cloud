@@ -35,6 +35,7 @@
         <module>bff-openfeign-library</module>
         <module>openfeign-web-services</module>
         <module>openfeign-interceptor-service</module>
+        <module>openfeign-client-credentials-interceptor</module>
     </modules>
 
     <build>

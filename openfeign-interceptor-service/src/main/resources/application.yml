@@ -3,10 +3,6 @@ server:
   port: 8086
 
 spring:
-#  autoconfigure:
-#    exclude:
-#      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
-#      - org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration
   security:
     basic:
       url: http://localhost:8083
@@ -18,20 +14,6 @@ spring:
       credentials:
         username: "han.do@example.com"
         password: "12345"
-    oauth2:
-      url: http://localhost:8085
-      client:
-        registration:
-          keycloak: # <--- It's your custom client. I am using keycloak
-            client-id: myclient
-            client-secret: 80YlNd6qwz84hnisibF8QHVAtjUkVj0p
-            authorization-grant-type: client_credentials
-            scope: openid, address, email, profile # your scopes
-        provider:
-          keycloak: # <--- Here Registered my custom provider
-            authorization-uri: http://localhost:8080/auth/realms/myrealm/protocol/openid-connect/auth
-            token-uri: http://localhost:8080/auth/realms/myrealm/protocol/openid-connect/token
-
 
 logging:
   level:

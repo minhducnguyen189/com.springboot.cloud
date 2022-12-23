@@ -19,12 +19,6 @@ public class OpenFeignInterceptorController {
     @Autowired
     private SpringJwtAuthClient springJwtAuthClient;
 
-    @Autowired
-    private SpringOAuth2ResourceClient springOAuth2ResourceClient;
-
-    @Autowired
-    private SpringOAuth2ResourceClientV2 springOAuth2ResourceClientV2;
-
     @RequestMapping(method = RequestMethod.GET, path = "/v1/basic/auth/interceptor/welcome")
     public ResponseEntity<String> getWelcomeMessageWithBasicAuthInterceptor() {
         return ResponseEntity.ok(this.springBasicAuthClient.sayWelcome());
@@ -38,16 +32,6 @@ public class OpenFeignInterceptorController {
     @RequestMapping(method = RequestMethod.GET, path = "/v1/jwt/auth/interceptor/loan")
     public ResponseEntity<String> getLoadMessage() {
         return ResponseEntity.ok(this.springJwtAuthClient.getLoanDetail());
-    }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/v1/oauth2/auth/interceptor/card")
-    public ResponseEntity<String> getCardMessage() {
-        return ResponseEntity.ok(this.springOAuth2ResourceClient.getCardDetail());
-    }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/v2/oauth2/auth/interceptor/card")
-    public ResponseEntity<String> getCardMessageV2() {
-        return ResponseEntity.ok(this.springOAuth2ResourceClientV2.getCardDetail());
     }
 
 }

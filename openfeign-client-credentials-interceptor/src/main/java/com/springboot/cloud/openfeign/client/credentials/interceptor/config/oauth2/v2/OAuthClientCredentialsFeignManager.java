@@ -1,4 +1,4 @@
-package com.springboot.cloud.openfeign.interceptor.service.config.oauth2.v2;
+package com.springboot.cloud.openfeign.client.credentials.interceptor.config.oauth2.v2;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;

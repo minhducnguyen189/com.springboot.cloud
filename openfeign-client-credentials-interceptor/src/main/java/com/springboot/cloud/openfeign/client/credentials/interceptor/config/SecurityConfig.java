@@ -1,4 +1,4 @@
-package com.springboot.cloud.openfeign.interceptor.service.config;
+package com.springboot.cloud.openfeign.client.credentials.interceptor.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
