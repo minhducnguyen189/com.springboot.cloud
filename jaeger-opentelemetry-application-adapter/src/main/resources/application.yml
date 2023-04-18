@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: jaeger-adapter-service
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://otel-collector:4317
+

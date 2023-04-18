@@ -1,0 +1,29 @@
+#service run at port 9090
+server:
+  port: 9090
+
+spring:
+  application:
+    #service name which will be showed on eureka server dashboard
+    name: jaeger-bff-application-service
+  #Enable Spring Cloud Discovery
+  cloud:
+    discovery:
+      enabled: true
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://otel-collector:4317
+
+#register this service to eureka server by url
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+adapter:
+  service:
+    name: jaeger-adapter-service

@@ -36,6 +36,8 @@
         <module>openfeign-web-services</module>
         <module>openfeign-interceptor-service</module>
         <module>openfeign-client-credentials-interceptor</module>
+        <module>jaeger-opentelemetry-bff-application-service</module>
+        <module>jaeger-opentelemetry-application-adapter</module>
     </modules>
 
     <build>
