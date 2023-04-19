@@ -1,0 +1,31 @@
+
+#server run at port 8761
+server:
+  port: 8761
+
+spring:
+  application:
+    #application name
+    name: eureka-server
+  sleuth:
+    enabled: true
+    tracing:
+      otlp:
+        endpoint: "http://localhost:4317"
+#      baggage:
+#        remote-fields: <comma-separated-list-of-fields-to-propagate>
+    sampler:
+      probability: 1.0
+
+logging:
+  level:
+    root: INFO
+    io.opentelemetry: INFO
+
+
+eureka:
+  client:
+    #self register is false
+    register-with-eureka: false
+    #self fetch registry is false
+    fetch-registry: false

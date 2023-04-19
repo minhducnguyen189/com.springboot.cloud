@@ -11,12 +11,19 @@ spring:
     discovery:
       enabled: true
   sleuth:
-    otel:
-      config:
-        trace-id-ratio-based: 1.0
-      exporter:
-        otlp:
-          endpoint: http://otel-collector:4317
+    enabled: true
+    tracing:
+      otlp:
+        endpoint: "http://localhost:4317"
+    #      baggage:
+    #        remote-fields: <comma-separated-list-of-fields-to-propagate>
+    sampler:
+      probability: 1.0
+
+logging:
+  level:
+    root: INFO
+    io.opentelemetry: INFO
 
 #register this service to eureka server by url
 eureka:
