@@ -20,4 +20,10 @@ public class BffApplicationController {
         log.info("BffApplicationController: getAdapterMessage");
         return ResponseEntity.ok(this.applicationAdapterApi.getAdapterMessage());
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/v1/bff/adapter/message/error")
+    public ResponseEntity<String> getAdapterErrorMessage() {
+        log.info("BffApplicationController: getAdapterErrorMessage");
+        return ResponseEntity.ok(this.applicationAdapterApi.getErrorMessage());
+    }
 }

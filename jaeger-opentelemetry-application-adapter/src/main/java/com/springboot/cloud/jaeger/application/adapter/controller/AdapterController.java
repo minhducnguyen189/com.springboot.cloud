@@ -16,4 +16,10 @@ public class AdapterController {
         return ResponseEntity.ok("Hello From application adapter Service");
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/v1/application/adapter/message/error")
+    public ResponseEntity<String> getErrorMessage() {
+        log.info("AdapterController: getErrorMessage");
+        throw new RuntimeException("AdapterController: getErrorMessage");
+    }
+
 }

@@ -9,18 +9,28 @@ spring:
     name: eureka-server
   sleuth:
     enabled: true
-    tracing:
-      otlp:
-        endpoint: "http://localhost:4317"
-#      baggage:
-#        remote-fields: <comma-separated-list-of-fields-to-propagate>
-    sampler:
-      probability: 1.0
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          enabled: true
+          endpoint: http://localhost:4317
+        jaeger:
+          enabled: false
+      log:
+        exporter:
+          enabled: true
+        slf4j:
+          enabled: true
 
 logging:
   level:
     root: INFO
-    io.opentelemetry: INFO
+    org:
+      springframework:
+        cloud:
+          sleuth: DEBUG
 
 
 eureka:
