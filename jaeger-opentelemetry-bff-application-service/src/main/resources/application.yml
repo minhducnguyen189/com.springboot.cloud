@@ -34,6 +34,8 @@ logging:
       springframework:
         cloud:
           sleuth: DEBUG
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %msg trace_id=%X{trace_id} span_id=%X{span_id} trace_flags=%X{trace_flags} %n"
 
 #register this service to eureka server by url
 eureka:

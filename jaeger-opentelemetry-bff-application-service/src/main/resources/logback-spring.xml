@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Base logback configuration provided for compatibility with Spring Boot 1.1
+-->
+
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+    <!-- Adds log to current trace span event -->
+    <appender name="SPAN_EVENT_APPENDER" class="com.springboot.cloud.jaeger.bff.application.config.LogbackSpanEventAppender">
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="SPAN_EVENT_APPENDER" />
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>
