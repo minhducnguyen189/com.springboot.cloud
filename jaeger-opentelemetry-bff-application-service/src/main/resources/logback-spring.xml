@@ -13,7 +13,7 @@ Base logback configuration provided for compatibility with Spring Boot 1.1
     </appender>
 
     <root level="INFO">
-        <appender-ref ref="SPAN_EVENT_APPENDER" />
+<!--        <appender-ref ref="SPAN_EVENT_APPENDER" />-->
         <appender-ref ref="CONSOLE" />
     </root>
 </configuration>

@@ -1,0 +1,4 @@
+spring:
+  application:
+    #service name which will be showed on eureka server dashboard
+    name: jaeger-bff-application-service

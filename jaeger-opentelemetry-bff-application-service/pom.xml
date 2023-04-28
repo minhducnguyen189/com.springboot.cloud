@@ -133,6 +133,15 @@
             <version>1.25.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.opentelemetry.instrumentation/opentelemetry-instrumentation-api -->
+        <dependency>
+            <groupId>io.opentelemetry.instrumentation</groupId>
+            <artifactId>opentelemetry-instrumentation-api</artifactId>
+            <version>1.25.0</version>
+        </dependency>
+
+
+
 
     </dependencies>
 
