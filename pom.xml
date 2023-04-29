@@ -40,6 +40,8 @@
         <module>jaeger-opentelemetry-application-adapter</module>
         <module>jaeger-opentelemetry-eureka-server</module>
         <module>sleuth-zipkin-eureka-server</module>
+        <module>sleuth-zipkin-bff-application-service</module>
+        <module>sleuth-zipkin-customer-service</module>
     </modules>
 
     <build>

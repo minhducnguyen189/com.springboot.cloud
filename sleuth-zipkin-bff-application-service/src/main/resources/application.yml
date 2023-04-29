@@ -1,0 +1,41 @@
+#service run at port 9090
+server:
+  port: 9090
+
+spring:
+  application:
+    #service name which will be showed on eureka server dashboard
+    name: sleuth-zipkin-bff-service
+  #Enable Spring Cloud Discovery
+  cloud:
+    discovery:
+      enabled: true
+  sleuth:
+    sampler:
+      percentage: 1.0
+    propagation:
+      type: B3,W3C
+  opentracing:
+    enabled: true
+  zipkin:
+    base-url: http://localhost:9411
+
+
+logging:
+  level:
+    root: INFO
+#    org:
+#      springframework:
+#        cloud:
+#          sleuth: DEBUG
+
+
+#register this service to eureka server by url
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+adapter:
+  service:
+    name: sleuth-zipkin-customer-service

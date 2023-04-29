@@ -1,5 +1,6 @@
 package com.springboot.cloud.sleuth.zipkin.eureka.server;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
@@ -7,6 +8,6 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @EnableEurekaServer
 public class SleuthZipkinEurekaServerApplication {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        SpringApplication.run(SleuthZipkinEurekaServerApplication.class, args);
     }
 }
