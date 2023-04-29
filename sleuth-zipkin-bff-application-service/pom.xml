@@ -94,6 +94,13 @@
             <artifactId>brave-opentracing</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>7.3</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>
