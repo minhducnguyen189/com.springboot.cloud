@@ -6,9 +6,10 @@ spring:
     name: sleuth-zipkin-customer-service
   sleuth:
     sampler:
-      percentage: 1.0
-    propagation:
-      type: B3,W3C
+      probability: 1.0
+    # propagation:
+    #   type: B3,W3C
+    supports-join: false    
   opentracing:
     enabled: true
   zipkin:
