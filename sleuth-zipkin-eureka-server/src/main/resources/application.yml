@@ -4,6 +4,8 @@ server:
   port: 8761
 
 spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
   application:
     #application name
     name: eureka-server
@@ -16,7 +18,11 @@ spring:
   opentracing:
     enabled: true
   zipkin:
-    base-url: http://localhost:9411
+    kafka:
+      topic: zipkin
+    sender:
+      type: kafka
+#    base-url: http://localhost:9411
 
 
 logging:

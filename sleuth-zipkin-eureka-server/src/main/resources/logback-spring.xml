@@ -25,17 +25,18 @@
                     <pattern>
                         {
                         "timestamp": "%d{yyyy-MM-dd HH:mm:ss.SSSZ}",
-                        "version": "${build.version}",
                         "level": "%level",
                         "service": "${springAppName:-}",
-                        "method":"%M",
+                        "package": "%logger{36}",
                         "class": "%c",
+                        "method":"%M",
                         "traceId": "%X{traceId:-}",
                         "spanId": "%X{spanId:-}",
                         "pid": "${PID:-}",
                         "thread": "%thread",
                         "class": "%logger{40}",
-                        "message": "%message"
+                        "message": "%message",
+                        "Exception": "${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
                         }
                     </pattern>
                 </pattern>

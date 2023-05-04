@@ -22,22 +22,23 @@
 					<timeZone>UTC</timeZone>
 				</timestamp>
 				<pattern>
-					<pattern>
-						{
-                        "timestamp": "%d{yyyy-MM-dd HH:mm:ss.SSSZ}",    
-                        "version": "${build.version}",
-						"level": "%level",
-						"service": "${springAppName:-}",
-                        "method":"%M",
+                    <pattern>
+                        {
+                        "timestamp": "%d{yyyy-MM-dd HH:mm:ss.SSSZ}",
+                        "level": "%level",
+                        "service": "${springAppName:-}",
+                        "package": "%logger{36}",
                         "class": "%c",
-						"traceId": "%X{traceId:-}",
-						"spanId": "%X{spanId:-}",
-						"pid": "${PID:-}",
-						"thread": "%thread",
-						"class": "%logger{40}",
-                        "message": "%message"
-						}
-					</pattern>
+                        "method":"%M",
+                        "traceId": "%X{traceId:-}",
+                        "spanId": "%X{spanId:-}",
+                        "pid": "${PID:-}",
+                        "thread": "%thread",
+                        "class": "%logger{40}",
+                        "message": "%message",
+                        "Exception": "${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+                        }
+                    </pattern>
 				</pattern>
 			</providers>
 		</encoder>
