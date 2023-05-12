@@ -1,0 +1,48 @@
+#service run at port 9090
+server:
+  port: 9090
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+  application:
+    #service name which will be showed on eureka server dashboard
+    name: sleuth-zipkin-bff-service
+  #Enable Spring Cloud Discovery
+  cloud:
+    discovery:
+      enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0
+    # propagation:
+    #   type: B3,W3C
+    supports-join: false  
+  opentracing:
+    enabled: true
+  zipkin:
+    kafka:
+      topic: zipkin
+    sender:
+      type: kafka
+#    base-url: http://localhost:9411
+
+
+logging:
+  level:
+    root: INFO
+#    org:
+#      springframework:
+#        cloud:
+#          sleuth: DEBUG
+
+
+#register this service to eureka server by url
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+adapter:
+  service:
+    name: sleuth-zipkin-customer-service

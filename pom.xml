@@ -39,9 +39,12 @@
         <module>jaeger-opentelemetry-bff-application-service</module>
         <module>jaeger-opentelemetry-application-adapter</module>
         <module>jaeger-opentelemetry-eureka-server</module>
-        <module>sleuth-zipkin-eureka-server</module>
-        <module>sleuth-zipkin-bff-application-service</module>
-        <module>sleuth-zipkin-customer-service</module>
+        <module>sleuth-log4j2-kafka-zipkin-eureka-server</module>
+        <module>sleuth-log4j2-kafka-zipkin-bff-application-service</module>
+        <module>sleuth-log4j2-kafka-zipkin-customer-service</module>
+        <module>sleuth-logback-kafka-zipkin-eureka-server</module>
+        <module>sleuth-logback-kafka-zipkin-bff-application-service</module>
+        <module>sleuth-logback-kafka-zipkin-customer-service</module>
     </modules>
 
     <build>
