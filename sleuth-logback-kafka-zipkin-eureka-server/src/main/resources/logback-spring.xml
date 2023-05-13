@@ -23,7 +23,21 @@
                 </timestamp>
                 <pattern>
                     <pattern>
-                        {"timestamp":"%d{yyyy-MM-ddHH:mm:ss.SSSZ}","level":"%level","service":"$${spring:spring.application.name}","package":"%logger{36}","class":"%c","method":"%M","traceId":"%X{traceId}","spanId":"%X{spanId}","pid":"%pid","thread":"%thread","logger":"%logger{40}","message":"%replace{%replace{%msg{separator()}}{(\")}{\\\"}}{\t}{}","exception":"%replace{%replace{%ex{full}{separator()}}{(\")}{\\\"}}{\t}{}"}
+                        {
+                            "timestamp": "%d{yyyy-MM-dd HH:mm:ss.SSSZ}",
+                            "level": "%level",
+                            "service": "${springAppName:-}",
+                            "package": "%logger{36}",
+                            "class": "%c",
+                            "method":"%M",
+                            "traceId": "%X{traceId:-}",
+                            "spanId": "%X{spanId:-}",
+                            "pid": "${PID:-}",
+                            "thread": "%thread",
+                            "class": "%logger{40}",
+                            "message": "%message",
+                            "exception": "${LOG_EXCEPTION_CONVERSION_WORD:-%rEx}"
+                        }                    
                     </pattern>
                 </pattern>
             </providers>

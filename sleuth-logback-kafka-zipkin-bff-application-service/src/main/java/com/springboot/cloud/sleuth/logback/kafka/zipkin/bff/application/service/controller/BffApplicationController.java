@@ -1,6 +1,6 @@
 package com.springboot.cloud.sleuth.logback.kafka.zipkin.bff.application.service.controller;
 
-import com.springboot.cloud.sleuth.log4j2.kafka.zipkin.bff.application.service.api.ApplicationAdapterApi;
+import com.springboot.cloud.sleuth.logback.kafka.zipkin.bff.application.service.api.ApplicationAdapterApi;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
