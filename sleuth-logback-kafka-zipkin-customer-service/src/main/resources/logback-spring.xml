@@ -5,6 +5,10 @@
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
     <springProperty scope="context" name="springAppName" source="spring.application.name"/>
 
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
     <!-- this is use for viewing possible variables that we can use in the log pattern -->
     <property name="CONSOLE_LOG_PATTERN"
               value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
@@ -36,10 +40,20 @@
                             "thread": "%thread",
                             "class": "%logger{40}",
                             "message": "%message",
-                            "exception": "${LOG_EXCEPTION_CONVERSION_WORD:-%rEx}"
+                            "exception": "${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
                         }                    
                     </pattern>
                 </pattern>
+                <stackTrace>
+                    <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                        <maxDepthPerThrowable>30</maxDepthPerThrowable>
+                        <maxLength>2048</maxLength>
+                        <shortenedClassNameLength>20</shortenedClassNameLength>
+                        <exclude>^sun\.reflect\..*\.invoke</exclude>
+                        <exclude>^net\.sf\.cglib\.proxy\.MethodProxy\.invoke</exclude>
+                        <rootCauseFirst>true</rootCauseFirst>
+                    </throwableConverter>
+                </stackTrace>
             </providers>
         </encoder>
         <topic>logstash</topic>
