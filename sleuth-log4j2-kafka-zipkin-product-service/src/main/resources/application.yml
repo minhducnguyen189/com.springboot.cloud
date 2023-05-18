@@ -1,11 +1,11 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
   application:
-    name: sleuth-zipkin-customer-service
+    name: sleuth-zipkin-product-service
   sleuth:
     sampler:
       probability: 1.0
@@ -29,7 +29,3 @@ logging:
 #      springframework:
 #        cloud:
 #          sleuth: DEBUG
-
-product:
-  service:
-    name: sleuth-zipkin-product-service

@@ -45,6 +45,7 @@
         <module>sleuth-logback-kafka-zipkin-eureka-server</module>
         <module>sleuth-logback-kafka-zipkin-bff-application-service</module>
         <module>sleuth-logback-kafka-zipkin-customer-service</module>
+        <module>sleuth-log4j2-kafka-zipkin-product-service</module>
     </modules>
 
     <build>
