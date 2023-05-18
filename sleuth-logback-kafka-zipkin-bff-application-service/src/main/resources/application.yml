@@ -43,6 +43,8 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-adapter:
-  service:
+service:
+  customer:
     name: sleuth-zipkin-customer-service
+  product:
+    name: sleuth-zipkin-product-service
