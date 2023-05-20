@@ -5,7 +5,7 @@
             <PatternLayout>
                 <alwaysWriteExceptions>false</alwaysWriteExceptions>
                 <pattern>
-                    {"timestamp":"%d{yyyy-MM-ddHH:mm:ss.SSSZ}","level":"%level","service":"$${spring:spring.application.name}","package":"%logger{36}","class":"%c","method":"%M","traceId":"%X{traceId}","spanId":"%X{spanId}","pid":"%pid","thread":"%thread","logger":"%logger{40}","message":"%replace{%replace{%msg{separator()}}{(\")}{\\\"}}{\t}{}","exception":"%replace{%replace{%ex{full}{separator()}}{(\")}{\\\"}}{\t}{}"}
+                    {"timestamp":"%d{yyyy-MM-ddHH:mm:ss.SSSZ}","level":"%level","service":"$${spring:spring.application.name}","package":"%logger{36}","class":"%c","method":"%M","traceId":"%X{traceId}","spanId":"%X{spanId}","parentSpanId":"%X{parentId}","sampled":"%X{sampled}","pid":"%pid","thread":"%thread","logger":"%logger{40}","message":"%replace{%replace{%msg{separator()}}{(\")}{\\\"}}{\t}{}","exception":"%replace{%replace{%ex{full}{separator()}}{(\")}{\\\"}}{\t}{}"}
                 </pattern>
             </PatternLayout>
             <Property name="bootstrap.servers">localhost:9092</Property>
@@ -15,7 +15,7 @@
         </Async>
 
         <Console name="stdout" target="SYSTEM_OUT">
-            <PatternLayout pattern="%style{%d{ISO8601}}{cyan} %highlight{%-5level} %pid %style{[${spring:spring.application.name},%t,%X{traceId},%X{spanId}]}{bright,blue} %style{%C{1.}}{bright,yellow}: %msg%n%throwable"/>
+            <PatternLayout pattern="%style{%d{ISO8601}}{cyan} %highlight{%-5level} %pid %style{[${spring:spring.application.name},%t,%X{traceId},%X{spanId},%X{parentId},%X{sampled}]}{bright,blue} %style{%C{1.}}{bright,yellow}: %msg%n%throwable"/>
         </Console>
 
     </Appenders>
