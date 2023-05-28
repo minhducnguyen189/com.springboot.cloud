@@ -6,6 +6,9 @@ spring:
     exclude: org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
   application:
     name: sleuth-zipkin-product-service
+  cloud:
+    discovery:
+      enabled: true
   sleuth:
     sampler:
       probability: 1.0

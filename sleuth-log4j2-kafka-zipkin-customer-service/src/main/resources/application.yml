@@ -6,12 +6,16 @@ spring:
     exclude: org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
   application:
     name: sleuth-zipkin-customer-service
+  cloud:
+    discovery:
+      enabled: true
   sleuth:
     sampler:
       probability: 1.0
     # propagation:
     #   type: B3,W3C
-    supports-join: false    
+    supports-join: true
+    trace-id128: true
   opentracing:
     enabled: true
   zipkin:

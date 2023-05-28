@@ -14,7 +14,8 @@ spring:
       probability: 1.0
     # propagation:
     #   type: B3,W3C
-    supports-join: false      
+    supports-join: true
+    trace-id128: true
   opentracing:
     enabled: true
   zipkin:
