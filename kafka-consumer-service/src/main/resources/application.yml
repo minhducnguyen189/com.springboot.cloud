@@ -1,0 +1,15 @@
+#service run at port 7070
+server:
+  port: 7071
+
+kafka:
+  consumer:
+    bootstrapServer: 127.0.0.1:9092
+    groupId: kafka-sample-group
+    topic: kafka-sample-topic
+    sslSecurityEnabled: false
+    sslPassword:
+    sslTrustStorePassword:
+    sslTrustStoreLocation:
+    sslKeyStorePassword:
+    sslKeyStoreLocation:

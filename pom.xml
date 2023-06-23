@@ -47,6 +47,8 @@
         <module>sleuth-logback-kafka-zipkin-customer-service</module>
         <module>sleuth-log4j2-kafka-zipkin-product-service</module>
         <module>sleuth-logback-kafka-zipkin-product-service</module>
+        <module>kafka-producer-service</module>
+        <module>kafka-consumer-service</module>
     </modules>
 
     <build>
