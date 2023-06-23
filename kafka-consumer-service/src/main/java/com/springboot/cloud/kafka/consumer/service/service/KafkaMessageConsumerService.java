@@ -1,7 +1,5 @@
 package com.springboot.cloud.kafka.consumer.service.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springboot.cloud.kafka.consumer.service.consumer.KafkaMessageHandler;
 import com.springboot.cloud.kafka.consumer.service.model.KafkaMessageDto;
 import lombok.RequiredArgsConstructor;
@@ -14,14 +12,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class KafkaMessageConsumerService implements KafkaMessageHandler {
 
-    private final ObjectMapper objectMapper;
-
     @Override
     public void onMessageReceived(KafkaMessageDto kafkaMessageDto) {
-        try {
-            log.info("Kafka Message Received: " + this.objectMapper.writeValueAsString(kafkaMessageDto));
-        } catch (JsonProcessingException ex) {
-            throw new RuntimeException("Invalid Kafka message received");
-        }
+        log.info("Kafka Message Received: " + kafkaMessageDto.getMessage());
     }
+
 }
